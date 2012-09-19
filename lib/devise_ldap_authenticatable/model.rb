@@ -74,6 +74,7 @@ module Devise
         # Authenticate a user based on configured attribute keys. Returns the
         # authenticated user if it's valid or nil.
         def authenticate_with_ldap(attributes={})
+          attributes ||= {}
           auth_key = self.authentication_keys.first
           return nil unless attributes[auth_key].present?
 
